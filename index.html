@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script src="node_modules/systemjs/dist/system.js"></script>
+  <script src='app/system.config.js'></script>
+  <script>
+  System.import('app/app.js').catch(console.error.bind(console));
+  </script>
+</head>
+<body ng-app="App">
+  <div ng-view></div>
+</body>
+</html>
