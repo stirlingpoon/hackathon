@@ -13,7 +13,7 @@ div{
 	color: #0A0A1F;
 }
 
-body{
+body, md-content, md-card{
 /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f0f9ff+0,cbebff+31,8e9cb2+100,a1dbff+100 */
 background: rgb(240,249,255); /* Old browsers */
 background: -moz-linear-gradient(top,  rgba(240,249,255,1) 0%, rgba(203,235,255,1) 31%, rgba(142,156,178,1) 100%, rgba(161,219,255,1) 100%); /* FF3.6+ */
