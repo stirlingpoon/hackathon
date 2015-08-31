@@ -1,26 +1,28 @@
-<div>
-  <md-content class="md-padding">
-    <md-card>
-      <md-card-content>
-        <table>
-        	<tr>
-        		<td>
-      				<img ng-src="{{face}}" class="md-avatar avatar" alt="{{name}}" />
-      			</td>
-      			<td>
-      				<h1>{{name}}</h1>
-      				<h2>{{role}}</h2>
-      			</td>
-      		</tr>
-      	</table>
-      	<md-divider ></md-divider>
-      	<h2>Skills</h2>
-      	<md-chips ng-model="skills"></md-chips>
-      </md-list-item>
-      </md-card-content>
-      <div class="md-actions" layout="row" layout-align="end center">
-        <md-button>Edit</md-button>
-      </div>
-    </md-card>
-  </md-content>
-</div>
+<md-card>
+  <md-card-content>
+    <table class="md-padding">
+    	<tr>
+    		<td class="md-padding">
+  				<img ng-src="{{face}}" class="md-avatar avatar" alt="{{name}}" />
+  			</td>
+  			<td class="md-padding">
+  				<h1>{{name}}</h1>
+  				<h2>{{role}}</h2>
+  			</td>
+  		</tr>
+  	</table>
+  	<md-divider ></md-divider>
+  	<h2>Skills</h2>
+  	<md-chips ng-model="skills | orderBy:'-rank'">
+		<md-chip-template>
+			<span>
+			  <strong>{{$chip.rank}}</strong> | {{$chip.name}}
+			</span>
+		</md-chip-template>
+  	</md-chips>
+  </md-list-item>
+  </md-card-content>
+  <div class="md-actions" layout="row" layout-align="end center">
+    <md-button class="md-primary">Edit</md-button>
+  </div>
+</md-card>

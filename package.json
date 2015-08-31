@@ -16,6 +16,8 @@
     "angular-route": "^1.4.5",
     "babel": "^5.8.23",
     "babel-core": "^5.8.23",
-    "systemjs": "^0.18.17"
+    "lodash": "^3.10.1",
+    "systemjs": "^0.18.17",
+    "then-request": "^2.1.1"
   }
 }

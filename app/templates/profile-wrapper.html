@@ -1,0 +1,35 @@
+<div>
+  <md-content>
+    <md-toolbar layout="row" layout-align="center center">
+      <div class="md-toolbar-tools">
+        <!--
+        <md-button class="md-icon-button" aria-label="Settings">
+          <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+        </md-button>
+        <h2>
+          <span>Title</span>
+        </h2>
+        -->
+        <md-autocomplete
+            flex="100"
+            ng-init="items = [{ text: 'a' },{ text: 'b' },{ text: 'c' },{ text: 'd' }]"
+            md-search-text="ctrl.searchText"
+            md-items="item in items"
+            md-item-text="item.text"
+        >
+            <span flex="">{{item.text}}</span>
+        </md-autocomplete>
+        <span flex></span>
+        <!--
+        <md-button class="md-icon-button" aria-label="Favorite">
+          <md-icon md-svg-icon="img/icons/favorite.svg" style="color: greenyellow;"></md-icon>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="More">
+          <md-icon md-svg-icon="img/icons/more_vert.svg"></md-icon>
+        </md-button>
+        -->
+      </div>
+    </md-toolbar>
+    <div ng-include='app/templates/profile.html' ng-controller='ProfileCtrl'></div>
+  </md-content>
+</div>

@@ -5,9 +5,7 @@ import 'angular-animate';
 import 'angular-material';
 
 import ProfileCtrl from 'app/controllers/ProfileCtrl.js';
-
-//import api from 'app/services/api/api.js';
-//import profileInfo from 'app/services/profileInfo/profileInfo.js';
+import WrapperCtrl from 'app/controllers/WrapperCtrl.js';
 
 const App = angular.module('App', ['ngRoute', 'ngMaterial']);
 
@@ -15,8 +13,8 @@ const App = angular.module('App', ['ngRoute', 'ngMaterial']);
 App.config(['$routeProvider', $routeProvider => {
 	$routeProvider.
 	when('/profile', {
-		templateUrl: 'app/templates/profile.html',
-		controller: 'ProfileCtrl'
+		templateUrl: 'app/templates/profile-wrapper.html',
+		controller: 'WrapperCtrl'
 	}).
 	when('/signin', {
 		templateUrl: 'app/templates/signin.html'
@@ -26,4 +24,5 @@ App.config(['$routeProvider', $routeProvider => {
 		redirectTo: '/singin'
 	})
 }])
-	.controller('ProfileCtrl', ProfileCtrl);
+	.controller('ProfileCtrl', ProfileCtrl)
+	.controller('WrapperCtrl', WrapperCtrl);

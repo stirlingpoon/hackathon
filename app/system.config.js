@@ -8,6 +8,7 @@ System.config({
 		'angular-animate': 'node_modules/angular-animate/angular-animate.min.js',
 		'angular-material': 'node_modules/angular-material/angular-material.min.js',
 		babel: 'node_modules/babel-core/browser.js',
-		'then-request': 'https://cdnjs.cloudflare.com/ajax/libs/then-request/2.1.1/request.min.js'
+		'then-request': 'node_modules/then-request/dist/request.min.js',
+		'lodash': 'node_modules/lodash/index.js'
 	}
 })
