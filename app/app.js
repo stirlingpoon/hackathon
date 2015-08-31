@@ -21,7 +21,7 @@ App.config(['$routeProvider', $routeProvider => {
 		//controller: 'ProfileCtrl'
 	}).
 	otherwise({
-		redirectTo: '/singin'
+		redirectTo: '/signin'
 	})
 }])
 	.controller('ProfileCtrl', ProfileCtrl)
