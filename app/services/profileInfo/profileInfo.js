@@ -1,4 +1,5 @@
-App.factory('profileInfo', ['$scope', 'api', function profileInfoFactory($scope, $api) {
+
+export default ['$scope', 'api', function profileInfoFactory($scope, $api) {
   var profileInfo = {};
   
   profileInfo.getInfo = function(email)
@@ -18,4 +19,4 @@ App.factory('profileInfo', ['$scope', 'api', function profileInfoFactory($scope,
 	  
 	  return deferred.promise;
   }
-}]);
+}];
