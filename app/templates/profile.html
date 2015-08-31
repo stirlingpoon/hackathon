@@ -1,1 +1,16 @@
-<p>This is a profile</p>
+<div>
+  <md-content class="md-padding">
+    <md-card>
+      <img ng-src="{{imagePath}}" class="md-card-image">
+      <md-card-content>
+        <h2 class="md-title">{{title}}</h2>
+        <p>
+          {{content}}
+        </p>
+      </md-card-content>
+      <div class="md-actions" layout="row" layout-align="end center">
+        <md-button>Edit</md-button>
+      </div>
+    </md-card>
+  </md-content>
+</div>

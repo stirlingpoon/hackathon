@@ -4,6 +4,8 @@ import 'angular-aria';
 import 'angular-animate';
 import 'angular-material';
 
+import ProfileCtrl from 'app/controllers/ProfileCtrl.js'
+
 const App = angular.module('App', ['ngRoute', 'ngMaterial']);
 
 App.config(['$routeProvider', $routeProvider => {
@@ -15,4 +17,5 @@ App.config(['$routeProvider', $routeProvider => {
 	otherwise({
 		redirectTo: '/profile'
 	})
-}]);
+}])
+	.controller('ProfileCtrl', ProfileCtrl)
