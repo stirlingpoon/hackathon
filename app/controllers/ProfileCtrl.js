@@ -1,6 +1,8 @@
-export default ['$scope', 'profileInfo', class ProfileCtrl {
-    constructor($scope, profileInfo) {
-        profileInfo.getInfo().then(({firstName, lastName, skills}) => {
+import {getInfo} from 'app/services/profileInfo/profileInfo.js';
+
+export default ['$scope', class ProfileCtrl {
+    constructor($scope) {
+        getInfo().then(({firstName, lastName, skills}) => {
             $scope.name = firstName + ' ' + lastName;
             $scope.role = 'Summer Intern at Credit Suisse';
             $scope.face = 'app/assets/stirling.jpg';

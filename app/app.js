@@ -12,9 +12,6 @@ import ProfileCtrl from 'app/controllers/ProfileCtrl.js';
 const App = angular.module('App', ['ngRoute', 'ngMaterial']);
 
 
-
-
-
 App.config(['$routeProvider', $routeProvider => {
 	$routeProvider.
 	when('/profile', {
