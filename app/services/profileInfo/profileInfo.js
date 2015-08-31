@@ -1,11 +1,17 @@
-export default ['$scope', 'api', '$q', function profileInfoFactory($scope, api, $q) {
-  var profileInfo = {};
+import angular from 'angular';
+
+class profileInfo{
+  constructor($scope, api, $q) {
+    this.$scope = $scope;
+	this.api = api;
+	this.$q = $q;
+  }
   
-  profileInfo.getInfo = function(email)
+  getInfo(email)
   {
-	  var deferred = $q.defer();
+	  var deferred = this.$q.defer();
 	  
-	  api.mockPost('/profileInfo', {email: 'mock@credit-suisse.com'}, {
+	  this.api.mockPost('/profileInfo', {email: 'mock@credit-suisse.com'}, {
 		  firstName: 'Mock',
 		  lastName: 'user',
 		  skills: ['C++', 'Java', 'XML']
@@ -18,4 +24,7 @@ export default ['$scope', 'api', '$q', function profileInfoFactory($scope, api, 
 	  
 	  return deferred.promise;
   }
-}];
+}
+
+export default angular.module('profileInfo', ['$scope', 'api', '$q'])
+  .service('profileInfo', profileInfo);

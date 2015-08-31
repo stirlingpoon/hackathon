@@ -1,4 +1,4 @@
-export default ['$scope', class ProfileCtrl {
+export default ['$scope', 'profileInfo', class ProfileCtrl {
     constructor($scope, profileInfo) {
         profileInfo.getInfo().then(({firstName, lastName, skills}) => {
             $scope.name = firstName + ' ' + lastName;

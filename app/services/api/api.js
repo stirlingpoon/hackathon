@@ -1,10 +1,15 @@
-export default '$scope', '$http', '$q', function apiFactory($scope, $http, $q) {
-  var api = {};
+import angular from 'angular';
+
+class api {
+  constructor($scope, $http, $q) {
+    this.$scope = $scope;
+	this.$http = $http;
+	this.$q = $q;
+  }
   
-  api.post = function(url, data){
-	 
-	var deferred = $q.defer();
-	$http.post(url, data).
+  post(url, data){
+	var deferred = this.$q.defer();
+	this.$http.post(url, data).
 		then(function(response) {
 			deferred.resolve(response);
 		}, function(response) {
@@ -13,9 +18,9 @@ export default '$scope', '$http', '$q', function apiFactory($scope, $http, $q) {
 	return deferred.promise;
   };
   
-  api.mockPost = function(url, data, mockResponse, mockErrorResponse, isMockingError){
+  mockPost(url, data, mockResponse, mockErrorResponse, isMockingError){
 	 
-	var deferred = $q.defer();
+	var deferred = this.$q.defer();
 	
 	if(isMockingError)
 		deferred.reject('POST request to '+url+' failed with error: '+mockErrorResponse);
@@ -23,6 +28,7 @@ export default '$scope', '$http', '$q', function apiFactory($scope, $http, $q) {
 		deferred.resolve(mockResponse);
 	return deferred.promise;
   };
-  
-  return api;
-}]);
+}
+
+export default angular.module('api', ['$scope', '$http', '$q'])
+  .service('api', api);
