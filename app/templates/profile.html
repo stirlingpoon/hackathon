@@ -1,12 +1,22 @@
 <div>
   <md-content class="md-padding">
     <md-card>
-      <img ng-src="{{imagePath}}" class="md-card-image">
       <md-card-content>
-        <h2 class="md-title">{{title}}</h2>
-        <p>
-          {{content}}
-        </p>
+        <table>
+        	<tr>
+        		<td>
+      				<img ng-src="{{face}}" class="md-avatar avatar" alt="{{name}}" />
+      			</td>
+      			<td>
+      				<h1>{{name}}</h1>
+      				<h2>{{role}}</h2>
+      			</td>
+      		</tr>
+      	</table>
+      	<md-divider ></md-divider>
+      	<h2>Skills</h2>
+      	<md-chips ng-model="skills"></md-chips>
+      </md-list-item>
       </md-card-content>
       <div class="md-actions" layout="row" layout-align="end center">
         <md-button>Edit</md-button>

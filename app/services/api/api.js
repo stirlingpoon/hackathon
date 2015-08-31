@@ -1,4 +1,4 @@
-export default ['$scope', '$http', function apiFactory($scope, $http) {
+export default '$scope', '$http', '$q', function apiFactory($scope, $http, $q) {
   var api = {};
   
   api.post = function(url, data){
@@ -25,4 +25,4 @@ export default ['$scope', '$http', function apiFactory($scope, $http) {
   };
   
   return api;
-}];
+}]);
