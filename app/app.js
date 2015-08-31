@@ -18,8 +18,12 @@ App.config(['$routeProvider', $routeProvider => {
 		templateUrl: 'app/templates/profile.html',
 		controller: 'ProfileCtrl'
 	}).
+	when('/signin', {
+		templateUrl: 'app/templates/signin.html'
+		//controller: 'ProfileCtrl'
+	}).
 	otherwise({
-		redirectTo: '/profile'
+		redirectTo: '/singin'
 	})
 }])
 	.controller('ProfileCtrl', ProfileCtrl);
