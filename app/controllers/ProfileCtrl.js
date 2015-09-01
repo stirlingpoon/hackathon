@@ -10,4 +10,11 @@ export default ['$scope', class ProfileCtrl {
             $scope.skills = skills;
         });
     }
+
+    newSkill(skill) {
+        return {
+            name: skill,
+            rank: 0
+        }
+    }
 }];

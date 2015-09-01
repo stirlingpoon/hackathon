@@ -13,12 +13,10 @@ const App = angular.module('App', ['ngRoute', 'ngMaterial']);
 App.config(['$routeProvider', $routeProvider => {
 	$routeProvider.
 	when('/profile', {
-		templateUrl: 'app/templates/profile-wrapper.html',
-		controller: 'WrapperCtrl'
+		templateUrl: 'app/templates/profile-wrapper.html'
 	}).
 	when('/signin', {
 		templateUrl: 'app/templates/signin.html'
-		//controller: 'ProfileCtrl'
 	}).
 	otherwise({
 		redirectTo: '/signin'

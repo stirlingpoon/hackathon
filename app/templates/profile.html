@@ -1,4 +1,4 @@
-<md-card>
+<md-card ng-controller='ProfileCtrl as ctrl'>
   <md-card-content>
     <table class="md-padding">
     	<tr>
@@ -13,7 +13,7 @@
   	</table>
   	<md-divider ></md-divider>
   	<h2>Skills</h2>
-  	<md-chips ng-model="skills | orderBy:'-rank'">
+  	<md-chips ng-model="skills" md-on-append="ctrl.newSkill($chip)">
 		<md-chip-template>
 			<span>
 			  <strong>{{$chip.rank}}</strong> | {{$chip.name}}
