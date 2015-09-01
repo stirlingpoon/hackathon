@@ -6,17 +6,20 @@ export default ['$scope', class skillSearchResultCtrl {
         $scope.skillSearchResult = [{
 										name: 'Anakin Lau',
 										role: 'TA',
-										skills: ['C++', 'Java', 'XML']
+										skills: ['C++', 'Java', 'XML'],
+										img: 'img/placeholder.jpg'
 									},
 									{
 										name: 'Spencer Goh',
 										role: 'AVP',
-										skills: ['C++', '.NET', 'Angular Material']
+										skills: ['C++', '.NET', 'Angular Material'],
+										img: 'app/assets/spencer.jpg'
 									},
 									{
 										name: 'Stirling Poon',
 										role: 'TA',
-										skills: ['C++', 'Java', 'Angular Material']
+										skills: ['C++', 'Java', 'Angular Material'],
+										img: 'img/placeholder.jpg'
 									}];
 	 
     }
