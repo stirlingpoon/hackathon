@@ -28,6 +28,10 @@ export const getPeople = (filter) => Promise.resolve(
 	.filter(({searchKey}) => searchKey.indexOf(filter) === 0)
 )
 
+export const getPeopleBySkill = (needle, peopleList) => Promise.resolve(
+	peopleList.filter(function(person){ return person.skills.indexOf(needle)>-1;})
+)
+
 export const endorseSkill = (id, skill) => {}
 
 export default {getInfo, getSkills, getPeople, endorseSkill};

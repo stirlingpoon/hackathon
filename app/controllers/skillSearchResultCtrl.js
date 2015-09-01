@@ -1,4 +1,4 @@
-import {getPeople} from 'app/services/profileInfo/profileInfo.js';
+import {getPeople, getPeopleBySkill} from 'app/services/profileInfo/profileInfo.js';
 import _ from 'lodash';
 
 export default ['$scope', '$routeParams', '$http', '$location', class skillSearchResultCtrl {
@@ -10,7 +10,7 @@ export default ['$scope', '$routeParams', '$http', '$location', class skillSearc
 			$scope.skillSearchResult = response;
 		}, function(response){});
 		*/
-        $scope.skillSearchResult = [{
+		getPeopleBySkill( $routeParams.skill, [{
 										name: 'Anakin Lau',
 										role: 'TA',
 										skills: ['C++', 'Java', 'XML'],
@@ -30,12 +30,10 @@ export default ['$scope', '$routeParams', '$http', '$location', class skillSearc
 										skills: ['C++', 'Java', 'Angular Material'],
 										img: 'img/placeholder.jpg',
 										id: 3
-									}];
-									/*
-		jQuery.noConflict();
-		$('md-list-item').click(function(){
-			window.location.href = '/hackathon/#/profile/'+id;
-		});*/
+									}]).then(function(filteredList){
+			$scope.skillSearchResult = filteredList;
+		});
+		console.log($scope.skillSearchResult);
     }
 	
 	toProfile(id) {
