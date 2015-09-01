@@ -7,4 +7,6 @@ export const getInfo = (email) =>
 		  skills: [{name: 'C++', rank: 1}, {name: 'Java', rank: 3}, {name: 'XML', rank: 2}]
 	  }, 'Mock Error', false);
 
-export default {getInfo};
+export const getAllSkills = () => Promise.resolve(['C++', 'Java', 'XML', 'Javascript', 'Angular.js', 'Ruby', 'Ruby on Rails'])
+
+export default {getInfo, getAllSkills};
