@@ -1,10 +1,14 @@
 import ProfileInfo from 'app/services/profileInfo/profileInfo.js';
 import _ from 'lodash';
 
-export default ['$scope', '$location', class WrapperCtrl {
-    constructor($scope, $location) {
+export default ['$scope', '$location', '$routeParams', class WrapperCtrl {
+    constructor($scope, $location, $routeParams) {
     	this.$scope = $scope;
     	this.$location = $location;
+
+    	 ProfileInfo.getInfo($routeParams.profileId).then(() => {
+    	 	$scope.face = 'app/assets/spencer-small.jpg';
+    	 })
     }
 
     querySearch(query) {
