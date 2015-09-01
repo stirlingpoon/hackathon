@@ -4,7 +4,7 @@
       <md-subheader class="md-no-sticky"><h2 class="searchResultTitle" style="padding:0 20px">People with the skill of {{searchPhrase}}:</h2></md-subheader>
 	   <div class="separator"></div>
 	  <div ng-repeat="item in skillSearchResult">
-		  <md-list-item class="md-3-line">
+		  <md-list-item class="md-3-line" ng-click="skillResultCtrl.toProfile(item.id)">
 			<img src="{{item.img}}" class="md-avatar" style="margin-left: 20px" />
 			<div class="md-list-item-text">
 			  <h3 style="padding:0 25px;font-weight:bold">{{ item.name }}</h2>
