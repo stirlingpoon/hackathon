@@ -2,24 +2,37 @@
   <md-card-content>
     <table class="md-padding">
     	<tr>
-    		<td class="md-padding">
+    		<td class="md-padding imgBackground">
   				<img ng-src="{{face}}" class="md-avatar avatar" alt="{{name}}" />
   			</td>
   			<td class="md-padding">
-  				<h1>{{name}}</h1>
-  				<h2>{{role}}</h2>
+  				<md-input-container>
+				  <label>Name</label>
+				  <input ng-model="name">
+				</md-input-container>
+  				<md-input-container>
+				  <label>Role</label>
+				  <input ng-model="role" readonly>
+				</md-input-container>
+  				<md-input-container>
+				  <label>Email</label>
+				  <input ng-model="email" readonly>
+				</md-input-container>
   			</td>
   		</tr>
   	</table>
   	<md-divider ></md-divider>
-  	<h2>Skills</h2>
-  	<md-chips ng-model="skills" md-on-append="ctrl.newSkill($chip)">
+	<md-toolbar class="md-primary">
+		<h2>Skills</h2>
+	</md-toolbar>
+	<md-chips ng-model="skills" md-on-append="ctrl.newSkill($chip);">
 		<md-chip-template>
 			<span>
-			  <strong>{{$chip.rank}}</strong> | {{$chip.name}}
+			<strong>{{$chip.rank}}</strong> | {{$chip.name}}
 			</span>
 		</md-chip-template>
-  	</md-chips>
+	</md-chips>
+	
   </md-list-item>
   </md-card-content>
   <div class="md-actions" layout="row" layout-align="end center">
