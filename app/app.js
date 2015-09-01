@@ -16,6 +16,9 @@ App.config(['$routeProvider', $routeProvider => {
 	when('/profile/:profileId', {
 		templateUrl: 'app/templates/profile-wrapper.html'
 	}).
+	when('/profile', {
+		templateUrl: 'app/templates/profile-wrapper.html'
+	}).
 	when('/signin', {
 		templateUrl: 'app/templates/signin.html'
 	}).
