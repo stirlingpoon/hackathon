@@ -44,7 +44,7 @@ export default ['$scope', '$location', '$routeParams', class WrapperCtrl {
     }
 
     handleSkillChange(skill) {
-
+    	this.$location.path('/searchResultBySkill/' + skill.display);
     }
 
     getSkills(filter) {
