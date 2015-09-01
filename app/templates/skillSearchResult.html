@@ -5,12 +5,12 @@
 	   <div class="separator"></div>
 	  <div ng-repeat="item in skillSearchResult">
 		  <md-list-item class="md-3-line" ng-click="skillResultCtrl.toProfile(item.id)">
-			<img src="{{item.img}}" class="md-avatar" style="margin-left: 20px" />
+			<img src="{{item.avatar}}" class="md-avatar" style="margin-left: 20px" />
 			<div class="md-list-item-text">
 			  <h3 style="padding:0 25px;font-weight:bold">{{ item.name }}</h2>
 			  <h4 style="padding:0 25px">{{ item.role }}</h4>
 			  <div style="display:flex">
-				<md-button class="md-raised" ng-repeat="skill in item.skills" style="padding: 2px 20px;">{{skill}}</md-button>
+				<md-button class="md-raised" ng-repeat="skill in item.skills" style="padding: 2px 20px;">{{skill.name}}</md-button>
 			  </div>
 			</div>
 		  </md-list-item>

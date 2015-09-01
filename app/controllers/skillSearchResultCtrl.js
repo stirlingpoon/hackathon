@@ -10,30 +10,9 @@ export default ['$scope', '$routeParams', '$http', '$location', class skillSearc
 			$scope.skillSearchResult = response;
 		}, function(response){});
 		*/
-		getPeopleBySkill( $routeParams.skill, [{
-										name: 'Anakin Lau',
-										role: 'TA',
-										skills: ['C++', 'Java', 'XML'],
-										img: 'img/placeholder.jpg',
-										id: 1
-									},
-									{
-										name: 'Spencer Goh',
-										role: 'AVP',
-										skills: ['C++', '.NET', 'Angular Material'],
-										img: 'app/assets/spencer.jpg',
-										id: 2
-									},
-									{
-										name: 'Stirling Poon',
-										role: 'TA',
-										skills: ['C++', 'Java', 'Angular Material'],
-										img: 'img/placeholder.jpg',
-										id: 3
-									}]).then(function(filteredList){
-			$scope.skillSearchResult = filteredList;
+		getPeopleBySkill($routeParams.skill).then(skills => {
+			$scope.skillSearchResult = skills;
 		});
-		console.log($scope.skillSearchResult);
     }
 	
 	toProfile(id) {

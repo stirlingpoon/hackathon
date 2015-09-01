@@ -6,13 +6,14 @@ export default ['$scope', '$routeParams', class ProfileCtrl {
         this.$scope = $scope;
         this.$routeParams = $routeParams;
         console.log('profile id', $routeParams.profileId);
-        ProfileInfo.getInfo($routeParams.profileId).then(({firstName, lastName, name, email, skills}) => {
-            $scope.name = name || (firstName + ' ' + lastName);
-            $scope.role = 'AVP';
-            $scope.face = 'app/assets/spencer.jpg';
+        ProfileInfo.getInfo($routeParams.profileId).then(({role, name, avatar, email, skills}) => {
+            $scope.name = name;
+            $scope.role = role;
+            $scope.face = avatar;
 			$scope.email = email;
             $scope.skills = skills;
         });
+        $scope.AVATARS = [null].concat(_.pluck(ProfileInfo.DETAILS, 'avatar'));
     }
 
     querySearch(query) {
@@ -43,10 +44,14 @@ export default ['$scope', '$routeParams', class ProfileCtrl {
         }
     }
     */
+    getAvatarById(id) {
+        console.log('getAvatarById', id, ProfileInfo.getInfo(id).avatar);
+        return ProfileInfo.getInfo(id).then(info => info.avatar);
+    }
 
     endorseSkill(skill) {
         console.log('endorseSkill', skill);
-        var id = parseInt(this.$routeParams.profileId, 10);
+        var id = 2; //Spencer
         if (skill.endorsedBy.indexOf(id) === -1) {
             skill.endorsedBy.push(id);
             ProfileInfo.endorseSkill(id, skill);

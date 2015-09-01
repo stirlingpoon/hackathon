@@ -30,6 +30,9 @@
 			<md-button flex="20" class="md-raised md-primary" ng-click="ctrl.endorseSkill(skill)">
 				<strong>{{skill.endorsedBy.length || 0}}</strong> | {{skill.name}}
 			</md-button>
+			<div ng-repeat="id in skill.endorsedBy">
+				<img ng-src="{{AVATARS[id]}}" class="md-avatar" style="margin-left: 20px; width: 40px; height: 40px;" />
+			</div>
 		</div>
 		<div layout="row" layout-align="left" class="md-padding">
 			<md-autocomplete
