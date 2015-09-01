@@ -6,24 +6,26 @@ import 'angular-material';
 
 import ProfileCtrl from 'app/controllers/ProfileCtrl.js';
 import WrapperCtrl from 'app/controllers/WrapperCtrl.js';
+import skillSearchResultCtrl from 'app/controllers/skillSearchResultCtrl.js';
 
 const App = angular.module('App', ['ngRoute', 'ngMaterial']);
 
 
 App.config(['$routeProvider', $routeProvider => {
 	$routeProvider.
-	when('/profile/', {
-		templateUrl: 'app/templates/profile-wrapper.html'
-	}).
-	when('/profile/:profileId', {
+	when('/profile', {
 		templateUrl: 'app/templates/profile-wrapper.html'
 	}).
 	when('/signin', {
 		templateUrl: 'app/templates/signin.html'
+	}).
+	when('/searchResultBySkill', {
+		templateUrl: 'app/templates/skillSearchResult.html'
 	}).
 	otherwise({
 		redirectTo: '/signin'
 	})
 }])
 	.controller('ProfileCtrl', ProfileCtrl)
-	.controller('WrapperCtrl', WrapperCtrl);
+	.controller('WrapperCtrl', WrapperCtrl)
+	.controller('skillSearchResultCtrl', skillSearchResultCtrl);

@@ -1,0 +1,18 @@
+<div>
+  <md-content ng-controller="skillSearchResultCtrl as skillResultCtrl">
+    <md-list ng-model="skillSearchResult">
+      <md-subheader class="md-no-sticky"><h2>People with the skill:</h2></md-subheader>
+      <md-list-item class="md-3-line" ng-repeat="item in skillSearchResult">
+        <img ng-src="item." class="md-avatar"  />
+        <div class="md-list-item-text">
+          <h3>{{ item.name }}</h3>
+          <h4>{{ item.role }}</h4>
+		  <div style="display:flex">
+			<md-button class="md-raised" ng-repeat="skill in item.skills" style="padding: 2px 20px;">{{skill}}</md-button>
+		  </div>
+        </div>
+      </md-list-item>
+      <md-divider ></md-divider>
+    </md-list>
+  </md-content>
+</div>

@@ -28,4 +28,6 @@ export const getPeople = (filter) => Promise.resolve(
 	.filter(({searchKey}) => searchKey.indexOf(filter) === 0)
 )
 
+
+
 export default {getInfo, getSkills, getPeople};
