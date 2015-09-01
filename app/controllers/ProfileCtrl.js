@@ -1,10 +1,11 @@
 import {getInfo} from 'app/services/profileInfo/profileInfo.js';
 import _ from 'lodash';
 
-export default ['$scope', class ProfileCtrl {
-    constructor($scope) {
-        getInfo().then(({firstName, lastName, email, skills}) => {
-            $scope.name = firstName + ' ' + lastName;
+export default ['$scope', '$routeParams', class ProfileCtrl {
+    constructor($scope, $routeParams) {
+        console.log('profile id', $routeParams.profileId);
+        getInfo($routeParams.profileId).then(({firstName, lastName, name, email, skills}) => {
+            $scope.name = name || (firstName + ' ' + lastName);
             $scope.role = 'AVP';
             $scope.face = 'app/assets/spencer.jpg';
 			$scope.email = email;

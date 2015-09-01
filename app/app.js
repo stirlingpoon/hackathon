@@ -12,7 +12,10 @@ const App = angular.module('App', ['ngRoute', 'ngMaterial']);
 
 App.config(['$routeProvider', $routeProvider => {
 	$routeProvider.
-	when('/profile', {
+	when('/profile/', {
+		templateUrl: 'app/templates/profile-wrapper.html'
+	}).
+	when('/profile/:profileId', {
 		templateUrl: 'app/templates/profile-wrapper.html'
 	}).
 	when('/signin', {
