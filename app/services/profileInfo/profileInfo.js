@@ -4,7 +4,7 @@ export const getInfo = (id) =>
 	mockPost('/profileInfo', {id}, {
 		  name: 'Spencer Goh ' + id,
 		  email: 'spencer.goh@credit-suisse.com',
-		  skills: [{name: 'C++', rank: 1}, {name: 'Java', rank: 3}, {name: 'XML', rank: 2}]
+		  skills: [{name: 'C++', rank: 1, endorsedBy: [1]}, {name: 'Java', rank: 3, endorsedBy: [1, 2, 3]}, {name: 'XML', rank: 2, endorsedBy: [1, 2]}]
 	  }, 'Mock Error', false);
 
 export const getSkills = (filter) => Promise.resolve(
@@ -28,6 +28,6 @@ export const getPeople = (filter) => Promise.resolve(
 	.filter(({searchKey}) => searchKey.indexOf(filter) === 0)
 )
 
+export const endorseSkill = (id, skill) => {}
 
-
-export default {getInfo, getSkills, getPeople};
+export default {getInfo, getSkills, getPeople, endorseSkill};
