@@ -25,10 +25,31 @@
 	<md-toolbar class="md-primary">
 		<h2>Skills</h2>
 	</md-toolbar>
-	<div ng-repeat="skill in skills | orderBy:'-rank'">
-		<md-button class="md-raised md-primary" ng-click="ctrl.endorseSkill(skill)">
-			<strong>{{skill.rank}}</strong> | {{skill.name}}
-		</md-button>
+	<div layout="column" layout-align="left">
+		<div layout="row" layout-align="left" ng-repeat="skill in skills | orderBy:'-endorsedBy.length'">
+			<md-button flex="20" class="md-raised md-primary" ng-click="ctrl.endorseSkill(skill)">
+				<strong>{{skill.endorsedBy.length}}</strong> | {{skill.name}}
+			</md-button>
+		</div>
+		<div layout="row" layout-align="left" class="md-padding">
+			<md-autocomplete
+				flex="20"
+			    md-selected-item="ctrl.selectedItem"
+			    md-search-text-change="ctrl.searchTextChange(ctrl.searchText)"
+			    md-search-text="ctrl.searchText"
+			    md-selected-item-change="ctrl.selectedItemChange(item)"
+			    md-items="item in ctrl.querySearch(ctrl.searchText)"
+			    md-item-text="item.display"
+			    md-min-length="0"
+			    placeholder="Add a skill">
+			  <md-item-template>
+			    <span md-highlight-text="ctrl.searchText" md-highlight-flags="^i">{{item.display}}</span>
+			  </md-item-template>
+			  <md-not-found>
+			    No matches found for "{{ctrl.searchText}}".
+			  </md-not-found>
+			</md-autocomplete>
+		</div>
 	</div>
 	<!--
 	<md-chips ng-model="skills" md-on-append="ctrl.newSkill($chip);">
@@ -41,7 +62,4 @@
 	-->
   </md-list-item>
   </md-card-content>
-  <div class="md-actions" layout="row" layout-align="end center">
-    <md-button class="md-primary">Edit</md-button>
-  </div>
 </md-card>
