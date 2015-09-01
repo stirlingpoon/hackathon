@@ -28,7 +28,7 @@
 	<div layout="column" layout-align="left">
 		<div layout="row" layout-align="left" ng-repeat="skill in skills | orderBy:'-endorsedBy.length'">
 			<md-button flex="20" class="md-raised md-primary" ng-click="ctrl.endorseSkill(skill)">
-				<strong>{{skill.endorsedBy.length}}</strong> | {{skill.name}}
+				<strong>{{skill.endorsedBy.length || 0}}</strong> | {{skill.name}}
 			</md-button>
 		</div>
 		<div layout="row" layout-align="left" class="md-padding">

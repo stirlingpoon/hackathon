@@ -8,7 +8,7 @@ export const getInfo = (id) =>
 	  }, 'Mock Error', false);
 
 export const getSkills = (filter) => Promise.resolve(
-	['C++', 'Java', 'XML', 'Javascript', 'Angular.js', 'Ruby', 'Ruby on Rails']
+	["Angular.js", "C", "C++", "Java", "Javascript", "R", "React.js", "Ruby", "Ruby on Rails", "Swift", "XML"]
 	.map(name => ({
 		display: name,
 		searchKey: name.toLowerCase(),
@@ -18,7 +18,7 @@ export const getSkills = (filter) => Promise.resolve(
 )
 
 export const getPeople = (filter) => Promise.resolve(
-	['Spencer Goh', 'Stirling Poon', 'Anakin Lau', 'Marcus Lo', 'Will Bassett']
+	["Anakin Lau", "Marcus Lo", "Spencer Goh", "Stirling Poon", "Will Bassett"]
 	.map((name, id) => ({
 		id: id,
 		display: name,

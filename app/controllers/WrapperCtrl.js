@@ -15,7 +15,7 @@ export default ['$scope', '$location', '$routeParams', class WrapperCtrl {
     	return Promise.all([this.getSkills(query), this.getPeople(query)])
     		.then(([skills, people]) => {
     			console.log('Got with filter', query, skills, people)
-				return Promise.resolve(_.flatten([skills, people]));
+				return Promise.resolve(_.sortBy(_.flatten([skills, people]), 'display'));
     		});
     }
 
