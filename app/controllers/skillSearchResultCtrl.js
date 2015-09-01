@@ -1,8 +1,9 @@
 import {getPeople} from 'app/services/profileInfo/profileInfo.js';
 import _ from 'lodash';
 
-export default ['$scope', class skillSearchResultCtrl {
-    constructor($scope) {
+export default ['$scope', '$routeParams', class skillSearchResultCtrl {
+    constructor($scope, $routeParams) {
+		$scope.searchPhrase = $routeParams.skill;
         $scope.skillSearchResult = [{
 										name: 'Anakin Lau',
 										role: 'TA',

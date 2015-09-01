@@ -19,7 +19,7 @@ App.config(['$routeProvider', $routeProvider => {
 	when('/signin', {
 		templateUrl: 'app/templates/signin.html'
 	}).
-	when('/searchResultBySkill', {
+	when('/searchResultBySkill/:skill', {
 		templateUrl: 'app/templates/skillSearchResult.html'
 	}).
 	otherwise({

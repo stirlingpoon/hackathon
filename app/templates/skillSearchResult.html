@@ -1,7 +1,7 @@
 <div>
   <md-content ng-controller="skillSearchResultCtrl as skillResultCtrl">
     <md-list ng-model="skillSearchResult">
-      <md-subheader class="md-no-sticky"><h2 class="searchResultTitle" style="padding:0 20px">People with the skill:</h2></md-subheader>
+      <md-subheader class="md-no-sticky"><h2 class="searchResultTitle" style="padding:0 20px">People with the skill of {{searchPhrase}}:</h2></md-subheader>
 	   <div class="separator"></div>
 	  <div ng-repeat="item in skillSearchResult">
 		  <md-list-item class="md-3-line">
